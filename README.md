@@ -28,7 +28,7 @@ Console-based system to manage internship postings, applications, approvals, and
 3. **Filtering (then sorting by Title)**
    - **Student** : Company name, Level (policy-aware), Closing date (≤).  
    - **Staff/Rep** : Company name, Level, Closing date (≤), Major, Status (DRAFT/PENDING/APPROVED/REJECTED).  
-   - Filters are **per-user, in-memory** for the session; not persisted to disk.
+   - Filters are **per-user, in-memory** for the session; not persisted/serialised to disk.
 
 ### Architecture (at a glance)
 1. **Boundary (UI)** : console pages collect input & render output; they **delegate** to services.  

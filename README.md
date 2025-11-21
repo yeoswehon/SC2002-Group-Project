@@ -3,7 +3,7 @@
 ### Overview
 Console-based system to manage internship postings, applications, approvals, and placements for **Students**, **Company Representatives**, and **Career Center Staff**. Designed with a clean layered architecture and SOLID principles. Data persists across restarts via serialized repositories, with CSV seeding on first run.
 
-### Contributions
+### Team Members
 1. Aaron Wee Zhi Rong
 2. Pan Yifan
 3. Loh Gan Sui

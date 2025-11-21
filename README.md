@@ -46,3 +46,9 @@ New-Item -ItemType Directory -Path .\out | Out-Null
 $sources = Get-ChildItem -Recurse -Filter *.java -Path .\src -File | % FullName
 javac -encoding UTF-8 -d .\out $sources
 java -cp .\out app.Main
+
+# Commands to delete serialised repositories
+Remove-Item -Force .\DataStorage\SerializedRepos\UserRepo.ser -ErrorAction SilentlyContinue
+Remove-Item -Force .\DataStorage\SerializedRepos\PostingRepo.ser -ErrorAction SilentlyContinue
+Remove-Item -Force .\DataStorage\SerializedRepos\ApplicationRepo.ser -ErrorAction SilentlyContinue
+Remove-Item -Force .\DataStorage\SerializedRepos\ApprovalQueue.ser -ErrorAction SilentlyContinue

@@ -18,24 +18,24 @@ Console-based system to manage internship postings, applications, approvals, and
 
 ### System Summary
 1. **Roles & Flows**
-   - **Student** — view (filtered), apply, view status, accept one offer, request withdrawal.  
-   - **Company Rep** — register (requires staff approval), create/edit **DRAFT**, submit for approval, toggle visibility, review applicants.  
-   - **Staff** — approve/reject **rep registrations** & **postings**, handle withdrawal requests, generate **comprehensive report** (respects filters).
+   - **Student** : view (filtered), apply, view status, accept one offer, request withdrawal.  
+   - **Company Rep** : register (requires staff approval), create/edit **DRAFT**, submit for approval, toggle visibility, review applicants.  
+   - **Staff** : approve/reject **rep registrations** & **postings**, handle withdrawal requests, generate **comprehensive report** (respects filters).
 2. **Eligibility & Visibility Rules**
    - Only **APPROVED** + **PUBLIC** postings within **open/close dates** are listed.  
    - **Y1–Y2** see **BASIC** only; **Y3–Y4** may also see **INTERMEDIATE/ADVANCED**.  
    - Capacity, major, and date-window checks enforced at listing/apply time.
 3. **Filtering (then sorting by Title)**
-   - **Student** — Company name, Level (policy-aware), Closing date (≤).  
-   - **Staff/Rep** — Company name, Level, Closing date (≤), Major, Status (DRAFT/PENDING/APPROVED/REJECTED).  
+   - **Student** : Company name, Level (policy-aware), Closing date (≤).  
+   - **Staff/Rep** : Company name, Level, Closing date (≤), Major, Status (DRAFT/PENDING/APPROVED/REJECTED).  
    - Filters are **per-user, in-memory** for the session; not persisted to disk.
 
 ### Architecture (at a glance)
-1. **Boundary (UI)** — console pages collect input & render output; they **delegate** to services.  
-2. **Services** — business rules & workflows (Auth, Posting, Application, Approval, Reporting).  
-3. **Repositories** — domain-oriented interfaces; serialized adapters implement them.  
-4. **Entities** — state + small invariants (e.g., `hasCapacity()`), no policy logic.  
-5. **Wiring** — `AppContext` + `Startup` configure and expose a single registry of services.
+1. **Boundary (UI)** : console pages collect input & render output; they **delegate** to services.  
+2. **Services** : business rules & workflows (Auth, Posting, Application, Approval, Reporting).  
+3. **Repositories** : domain-oriented interfaces; serialized adapters implement them.  
+4. **Entities** : state + small invariants (e.g., `hasCapacity()`), no policy logic.  
+5. **Wiring** : `AppContext` + `Startup` configure and expose a single registry of services.
 
 ### Build & Run
 
